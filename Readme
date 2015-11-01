@@ -1,0 +1,44 @@
+				CHATROOM
+Chat room is a web application that allows users to chat in multiple rooms.
+Technology Used:
+HTML
+JavaScript
+PHP
+AJAX
+Feature Supported:
+Separate registration & login support.
+Group chat.
+History of old chat messages.
+Provide multiple chat room facility.
+Show registered users.
+All these are managed by using database server.
+Instruction to Run the app:
+You can run this app by using any Apache server Software preferably use Xamp, Lamp.
+
+If you don’t have any Apache Server Software So here is the link to download the Xamp: https://www.apachefriends.org/download.html .
+Copy & paste the extracted folder (send by me) to “www” or “htdocs” folder for wamp or Xamp respectively.
+Start Apache & Sql Server.
+Import the database file (chatroom) given in the assignment in your Sql server.
+Then open localhost/(foldername) in your browser.
+The open page is your required application.
+Here you can register & login to chat with another users e.g. use username=”ichigo” , password=”123”  & chatroom (as you select).
+For each chatroom the homepage is opened which shows the registered users for that chatroom & last messages of each user in that chatroom.
+
+Instruction to Understand the Code:
+Files created:
+Index.php:  It is the first page which you see on running the application. It is the simple login 
+Page where user can login to connect to other users. I use simple sql query in php to check whether the user enter valid credentials by checking the username & password stored in my database. If user enters wrong credential it shows a message to enter right details.
+signup.php: It is the page for registering the user in the database. If the user enter the username which is already stored in my database then it shows “user already registered” or 
+Other messages to correct the user. After registering, it will redirect you to index.php where you can enter your details to connect with users for chatting.
+homepage.php: It is the page which provides you the interface for chatting, it shows the user registered & their messages for the chatroom which you selected while login. In this page I used Ajax to update the message when you entered the message in the text area it calls the function “msgupdate” which creates the Xmlhttpobject to connect with server. By 
+Connecting to “msg.php” I insert the message in my Database with the entry of username & its message with that chatno (user, message, chatno) in message table. After inserting in table it sends back response to msgupdate to print that message in my div (id=”showmsg”).
+Div (id=”showmsg”) show all messages of all users in chatroom. To show message there is a simple query in Sql “select * from `message-table`” which shows my all users with their messages.
+Mid_logout.php: This page is used to destroy the session for each user. It is called when user press logout button in homepage. 
+Connection.php: It is required to set up the connection between client & server .In this section of code we connect with our Database.
+
+DATABASE:
+Registration-table: It includes name, username, and password as three attributes to store credential for each user.
+Message-table: It includes user, message, and chatno. User is the username of each user, message stores the message of that user & chatno is the number of chatroom user uses while login time. Chatno updates every time whenever user login.
+Contact Details: 
+Email id: singhalasdd123@gmail.com
+Contact no :8292442370
